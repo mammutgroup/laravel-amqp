@@ -1,5 +1,5 @@
 {
-  "name": "bschmitt/laravel-amqp",
+  "name": "mammutgroup/laravel-amqp",
   "description": "AMQP wrapper for Laravel and Lumen to publish and consume messages",
   "keywords": [
     "laravel",
@@ -16,12 +16,16 @@
   "license": "MIT",
   "support": {
       "issues": "https://github.com/bschmitt/laravel-amqp/issues",
-      "source": "https://github.com/bschmitt/laravel-amqp"
+      "source": "https://github.com/mammutgroup/laravel-amqp"
   },
   "authors": [
     {
       "name": "Björn Schmitt",
       "email": "code@bjoern.io"
+    },
+    {
+      "name": "MohammadReza Honarkhah",
+      "email": "m.honar@gmail.com"
     }
   ],
   "require": {

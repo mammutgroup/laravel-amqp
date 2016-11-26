@@ -1,7 +1,7 @@
 <?php namespace Bschmitt\Amqp;
 
 use Illuminate\Config\Repository;
-use PhpAmqpLib\Connection\AMQPStreamConnection;
+use Illuminate\Support\Arr;
 
 /**
  * @author Björn Schmitt <code@bjoern.io>
@@ -32,7 +32,7 @@ abstract class Context
     protected function extractProperties(Repository $config)
     {
         if ($config->has(self::REPOSITORY_KEY)) {
-            $data             = $config->get(self::REPOSITORY_KEY);
+            $data = $config->get(self::REPOSITORY_KEY);
             $this->properties = $data['properties'][$data['use']];
         }
     }
@@ -59,9 +59,9 @@ abstract class Context
      * @param string $key
      * @return mixed
      */
-    public function getProperty($key)
+    public function getProperty($key,$default = null)
     {
-        return array_key_exists($key, $this->properties) ? $this->properties[$key] : NULL;
+        return Arr::get($this->properties, $key, $default);
     }
 
     /**
