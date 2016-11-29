@@ -25,6 +25,7 @@ return [
             'connect_options' 		=> [],
             'ssl_options'     		=> [],
 
+            'exchange_declare'      => env('RABBITMQ_EXCHANGE_DECLARE', true), // create the exchange if not exists
             'exchange'             	=> 'amq.'.env('RABBITMQ_EXCHANGE_TYPE', 'direct'),
             'exchange_type'        	=> env('RABBITMQ_EXCHANGE_TYPE', 'direct'),
             'exchange_passive'     	=> env('RABBITMQ_EXCHANGE_PASSIVE', false),

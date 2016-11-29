@@ -24,7 +24,10 @@ class Amqp
             ->setup();
 
         $messageProperties = ['content_type' => 'text/plain', 'delivery_mode' => 2];
-        $messageProperties = array_merge($messageProperties, $publisher->getProperty('message_properties'));
+        $mP = $publisher->getProperty('message_properties');
+        if(!empty($mP)){
+            $messageProperties = array_merge($messageProperties,$mP );
+        }
 
         if (is_string($message)) {
             $message = new Message($message, $messageProperties);
